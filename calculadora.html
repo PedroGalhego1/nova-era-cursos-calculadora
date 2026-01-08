@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'>
+<title>Calculadora Penal BOPE - Nova Era</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#00B4D8;background:linear-gradient(135deg,#00B4D8,#0096C7,#00B4D8,#48CAE4);background-size:400% 400%;animation:bgRGB 8s ease infinite;padding:20px;min-height:100vh}
+@keyframes bgRGB{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.menuCursosBtn{position:fixed;top:20px;left:20px;padding:12px 25px;background:#fff;color:#00B4D8;font-size:16px;font-weight:bold;border:3px solid #00B4D8;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(0,180,216,0.6);z-index:1000}
+.menuCursosBtn:hover{background:#00B4D8;color:#fff;transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(0,180,216,0.9)}
+.menuIcon{width:24px;height:24px}
+h1{text-align:center;color:#fff;font-size:48px;margin-bottom:30px;text-shadow:0 0 30px rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
+.logo{width:70px;height:70px;background:url('https://codewords-uploads.s3.amazonaws.com/runtime_v2/9bf6f75f10c846638c46b859df1f5668587488a9b6a048f7b9ece6a04440c3bd/BOPE_Faca_na_Caveira.svg.png') center no-repeat;background-size:contain;animation:spin 4s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.emoji-apple{width:26px;height:26px;display:inline-block;vertical-align:middle}
+.container{max-width:1600px;margin:0 auto}
+.top{display:grid;grid-template-columns:1fr 1fr auto;gap:15px;margin-bottom:25px}
+.inp{display:flex;flex-direction:column}
+.inp label{color:#fff;font-weight:bold;margin-bottom:5px;font-size:16px;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+.inp input{padding:14px;border:3px solid #fff;border-radius:8px;background:#fff;color:#000;font-size:16px;font-weight:bold}
+.fian{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border:3px solid #fff;border-radius:8px}
+.fian label{color:#000;font-weight:bold;font-size:16px;cursor:pointer}
+.boxes{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:25px}
+.box{background:#fff;padding:22px;border-radius:10px;border:3px solid #fff;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,0.3)}
+.box h3{color:#000;font-size:14px;margin-bottom:10px;font-weight:bold}
+.box .val{color:#000;font-size:32px;font-weight:900}
+.main{display:grid;grid-template-columns:1.2fr 1fr 1.3fr;gap:20px}
+.sec{background:#fff;padding:25px;border-radius:10px;border:3px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.sec h2{color:#000;margin-bottom:18px;font-size:24px;font-weight:bold;display:flex;align-items:center;gap:8px}
+.search{width:100%;padding:12px 12px 12px 40px;margin-bottom:18px;border:3px solid #ddd;border-radius:8px;background:#f5f5f5 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="3" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>') 10px center no-repeat;color:#000;font-size:16px;font-weight:bold}
+.list{max-height:480px;overflow-y:auto}
+.item{padding:14px;background:#f9f9f9;border:2px solid #ddd;border-radius:8px;margin-bottom:10px;cursor:pointer;transition:all 0.3s;color:#000;font-weight:bold;font-size:15px}
+.item:hover{background:#e0e0e0;transform:translateX(5px);border-color:#999}
+.item.sel{background:#00B4D8;color:#fff;border-color:#0096C7;box-shadow:0 0 20px rgba(0,180,216,0.6)}
+.ficha{background:#fff;padding:30px;border-radius:10px;border:4px solid #fff;box-shadow:0 0 40px rgba(0,0,0,0.3)}
+.ficha h2{text-align:center;color:#000;margin-bottom:22px;font-size:28px;font-weight:bold;display:flex;align-items:center;justify-content:center;gap:8px}
+.finf{margin-bottom:14px;padding:12px;background:#f5f5f5;border-radius:8px;border-left:5px solid #00B4D8;color:#000;font-size:15px}
+.finf strong{display:block;margin-bottom:5px;font-size:13px;color:#000}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.btn{padding:18px;border:3px solid #00B4D8;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;background:#00B4D8;color:#fff;transition:all 0.3s}
+.btn:hover{background:#0096C7;transform:scale(1.05);box-shadow:0 8px 25px rgba(0,150,199,0.5)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#f0f0f0}
+::-webkit-scrollbar-thumb{background:#00B4D8;border-radius:5px}
+@media (max-width:1024px){
+.main{grid-template-columns:1fr}
+.top{grid-template-columns:1fr}
+.fian{justify-content:center}
+.boxes{grid-template-columns:repeat(2,1fr)}
+h1{font-size:36px}
+.logo{width:50px;height:50px}
+.sec{padding:20px}
+.item{font-size:14px;padding:12px}
+.btn{font-size:16px;padding:16px}
+.menuCursosBtn{padding:10px 20px;font-size:14px;top:15px;left:15px}
+}
+@media (max-width:600px){
+h1{font-size:28px}
+.boxes{grid-template-columns:1fr;gap:10px}
+.box{padding:18px}
+.box .val{font-size:28px}
+.inp input{font-size:14px;padding:12px}
+.search{font-size:14px;padding:10px 10px 10px 35px}
+.item{padding:10px;font-size:13px}
+.btn{padding:14px;font-size:15px}
+.ficha h2{font-size:22px}
+.finf{font-size:14px;padding:10px}
+.menuCursosBtn{padding:8px 15px;font-size:12px;gap:5px}
+.menuIcon{width:20px;height:20px}
+}
+</style>
+</head>
+<body>
+<a href="index.html" class="menuCursosBtn">
+<img src="https://em-content.zobj.net/source/apple/391/graduation-cap_1f393.png" alt="🎓" class="menuIcon">
+Menu Cursos
+</a>
+<div class='container'>
+<h1><div class='logo'></div>CALCULADORA PENAL BOPE</h1>
+<div class='top'>
+<div class='inp'><label>NOME DO ACUSADO:</label><input id='nom' placeholder='Digite o nome'></div>
+<div class='inp'><label>ID DO ACUSADO:</label><input id='ida' placeholder='Digite o ID'></div>
+<div class='fian'><label>FIANÇA:</label><label><input type='radio' name='f' value='s'>SIM</label><label><input type='radio' name='f' value='n' checked>NÃO</label></div>
+</div>
+<div class='boxes'>
+<div class='box'><h3>VALOR DA MULTA:</h3><div class='val' id='vm'>R$ 0</div></div>
+<div class='box'><h3>VALOR DA FIANÇA:</h3><div class='val' id='vf'>R$ 0</div></div>
+<div class='box'><h3>REDUÇÃO:</h3><div class='val' id='vr'>0%</div></div>
+<div class='box'><h3>TOTAL DA PENA:</h3><div class='val' id='vp'>0</div></div>
+</div>
+<div class='main'>
+<div class='sec'><h2><img src='https://em-content.zobj.net/source/apple/391/scroll_1f4dc.png' class='emoji-apple'>ARTIGOS:</h2><input id='bus' class='search' placeholder='Buscar artigos'><div class='list' id='la'></div></div>
+<div class='sec'><h2><img src='https://em-content.zobj.net/source/apple/391/balance-scale_2696-fe0f.png' class='emoji-apple'>ATENUANTES:</h2><div class='list' id='lt'></div></div>
+<div class='sec ficha'><h2><img src='https://em-content.zobj.net/source/apple/391/clipboard_1f4cb.png' class='emoji-apple'>FICHA CRIMINAL</h2><div id='fc'></div><div class='btns'><button class='btn' onclick='c()'>CALCULAR</button><button class='btn' onclick='cp()'>COPIAR</button><button class='btn' onclick='lp()' style='grid-column:span 2'>LIMPAR</button></div></div>
+</div>
+</div>
+<script>
+const A=[{i:1,n:'Art. 01: Abuso de Autoridade',p:20,m:5000},{i:2,n:'Art. 02: Corrupção',p:25,m:15000},{i:3,n:'Art. 03: Desacato',p:10,m:3000},{i:4,n:'Art. 04: Impedir Exercício',p:15,m:4000},{i:5,n:'Art. 05: Prevaricação',p:20,m:6000},{i:6,n:'Art. 06: Resistência',p:18,m:4500},{i:7,n:'Art. 07: Desobediência',p:12,m:3500},{i:8,n:'Art. 08: Falsificação',p:30,m:10000},{i:9,n:'Art. 09: Invasão',p:15,m:5000},{i:10,n:'Art. 10: Ameaça',p:10,m:2500},{i:11,n:'Art. 11: Lesão Leve',p:20,m:5000},{i:12,n:'Art. 12: Lesão Grave',p:35,m:12000},{i:13,n:'Art. 13: Tent. Homicídio',p:50,m:25000},{i:14,n:'Art. 14: Homicídio',p:80,m:50000},{i:15,n:'Art. 15: Sequestro',p:60,m:30000},{i:16,n:'Art. 16: Roubo',p:25,m:8000},{i:17,n:'Art. 17: Furto',p:15,m:4000},{i:18,n:'Art. 18: Extorsão',p:35,m:15000},{i:19,n:'Art. 19: Estelionato',p:20,m:7000},{i:20,n:'Art. 20: Receptação',p:18,m:5000},{i:41,n:'Art. 41: Porte Arma Pesada',p:30,m:8000},{i:42,n:'Art. 42: Tráfico Armas',p:40,m:20000},{i:43,n:'Art. 43: Porte Arma Branca',p:15,m:3000},{i:44,n:'Art. 44: Porte Munição',p:25,m:5000},{i:45,n:'Art. 45: Tráfico Munição',p:35,m:15000},{i:50,n:'Art. 50: Tráfico Drogas',p:50,m:30000},{i:51,n:'Art. 51: Porte Drogas',p:15,m:4000}];
+const T=[{i:1,n:'Jurídico Constituído',r:10},{i:2,n:'Réu Primário',r:15},{i:3,n:'Réu Confesso',r:20},{i:4,n:'Colaboração',r:25},{i:5,n:'Porte Legal',r:5},{i:6,n:'Delação Premiada',r:30}];
+let sA=[],sT=[];
+function rA(){document.getElementById('la').innerHTML=A.map(a=>`<div id='a${a.i}' onclick='tA(${a.i})' class='item'><strong>${a.n}</strong><br><small style='color:#666'>${a.p} meses | R$ ${a.m.toLocaleString()}</small></div>`).join('')}
+function rT(){document.getElementById('lt').innerHTML=T.map(t=>`<div id='t${t.i}' onclick='tT(${t.i})' class='item'><strong>${t.n}</strong><br><small style='color:#666'>${t.r}% redução</small></div>`).join('')}
+function tA(i){const x=sA.indexOf(i);const e=document.getElementById(`a${i}`);if(x>-1){sA.splice(x,1);e.classList.remove('sel')}else{sA.push(i);e.classList.add('sel')}c()}
+function tT(i){const x=sT.indexOf(i);const e=document.getElementById(`t${i}`);if(x>-1){sT.splice(x,1);e.classList.remove('sel')}else{sT.push(i);e.classList.add('sel')}c()}
+function c(){let p=0,m=0;sA.forEach(i=>{const a=A.find(x=>x.i===i);if(a){p+=a.p;m+=a.m}});let r=0;sT.forEach(i=>{const t=T.find(x=>x.i===i);if(t)r+=t.r});if(r>100)r=100;const pr=Math.ceil(p*(1-r/100));const f=document.querySelector('[name="f"]:checked').value==='s';const vf=f?m*0.5:0;document.getElementById('vm').textContent='R$ '+m.toLocaleString();document.getElementById('vf').textContent='R$ '+vf.toLocaleString();document.getElementById('vr').textContent=r+'%';document.getElementById('vp').textContent=pr;let h=`<div class='finf'><strong>NOME:</strong> ${document.getElementById('nom').value||'-'}</div><div class='finf'><strong>PASSAPORTE:</strong> ${document.getElementById('ida').value||'-'}</div><div class='finf'><strong>CRIMES:</strong><br>${sA.map(i=>A.find(x=>x.i===i)?.n).join('<br>')||'Nenhum'}</div><div class='finf'><strong>PENA TOTAL:</strong> ${p} meses</div><div class='finf'><strong>ATENUANTES:</strong> ${sT.map(i=>T.find(x=>x.i===i)?.n).join(', ')||'Nenhum'}</div><div class='finf'><strong>REDUÇÃO:</strong> ${r}%</div><div class='finf' style='background:#e8f4f8;border-color:#00B4D8;border-width:4px'><strong>PENA REDUZIDA:</strong><div style='font-size:32px;font-weight:900;margin-top:5px;color:#000'>${pr} MESES</div></div><div class='finf'><strong>MULTA:</strong> R$ ${m.toLocaleString()}</div><div class='finf'><strong>FIANÇA:</strong> ${f?'SIM':'NÃO'} - R$ ${vf.toLocaleString()}</div>`;document.getElementById('fc').innerHTML=h}
+function cp(){const t=document.getElementById('fc').innerText;navigator.clipboard.writeText('=== FICHA CRIMINAL BOPE - NOVA ERA ===\n'+t).then(()=>alert('✅ Ficha copiada!')).catch(()=>alert('❌ Erro'))}
+function lp(){sA=[];sT=[];document.getElementById('nom').value='';document.getElementById('ida').value='';document.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));document.querySelectorAll('[name="f"]')[1].checked=true;c()}
+document.getElementById('bus').addEventListener('input',e=>{const b=e.target.value.toLowerCase();document.querySelectorAll('[id^="a"]').forEach(i=>{i.style.display=i.textContent.toLowerCase().includes(b)?'block':'none'})});
+rA();rT();c();
+</script>
+</body>
+</html>
