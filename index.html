@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>Menu de Cursos Policial - Nova Era RP</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;min-height:100vh;background:url('https://codewords-uploads.s3.amazonaws.com/runtime_v2/8e71f62838fd49789e04b76b40273ebecdf761e625344371a1b3803b6d22c163/3031764-fundo-azul-amplo-com-gradiente-linear-borrado-gratis-vetor.jpg') center/cover fixed;padding:40px 20px;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, rgba(0,180,216,0.3), rgba(0,212,255,0.2));z-index:0;pointer-events:none}
+.container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.topButtons{position:fixed;top:20px;right:20px;display:flex;gap:15px;z-index:1000}
+.calculadoraBtn{padding:12px 25px;background:#fff;color:#00B4D8;font-size:16px;font-weight:bold;border:3px solid #00B4D8;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(0,180,216,0.6)}
+.calculadoraBtn:hover{background:#00B4D8;color:#fff;transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(0,180,216,0.9)}
+.discordBtn{padding:12px 25px;background:linear-gradient(135deg, #5865F2, #4752C4);color:#fff;font-size:16px;font-weight:bold;border:3px solid #5865F2;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(88,101,242,0.6)}
+.discordBtn:hover{background:linear-gradient(135deg, #4752C4, #3c45a5);transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(88,101,242,0.9)}
+.btnIcon{width:24px;height:24px}
+.header{text-align:center;margin-bottom:60px;animation:fadeInDown 0.8s}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+.logo{width:350px;max-width:90%;height:auto;margin-bottom:30px;filter:drop-shadow(0 0 40px rgba(0,212,255,1));animation:logoGlow 2s infinite alternate}
+@keyframes logoGlow{from{filter:drop-shadow(0 0 40px rgba(0,212,255,1))}to{filter:drop-shadow(0 0 60px rgba(0,212,255,1)) brightness(1.2)}}
+.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(0,212,255,1), 0 0 80px rgba(0,212,255,0.8);margin-bottom:15px;letter-spacing:2px}
+.subtitle{font-size:24px;color:#00D4FF;font-weight:300;text-shadow:0 0 30px rgba(0,212,255,0.8)}
+.cursos{display:grid;grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));gap:40px;margin-bottom:60px}
+.curso{background:#fff;border:4px solid #00D4FF;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 0 50px rgba(0,212,255,0.5);transition:all 0.4s;animation:fadeInUp 0.8s;animation-fill-mode:both}
+.curso:nth-child(1){animation-delay:0.1s}
+.curso:nth-child(2){animation-delay:0.2s}
+.curso:nth-child(3){animation-delay:0.3s}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.curso:hover{transform:translateY(-10px) scale(1.02);border-color:#00D4FF;box-shadow:0 30px 80px rgba(0,212,255,0.9)}
+.cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(0,180,216,0.2)}
+.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(0,180,216,0.4));flex-shrink:0}
+.cursoTitulo{font-size:28px;font-weight:bold;color:#00B4D8;flex:1}
+.badge{display:inline-block;padding:8px 20px;background:linear-gradient(135deg, #00D4FF, #00B4D8);color:#000;font-size:14px;font-weight:bold;border-radius:20px;margin-bottom:15px;box-shadow:0 5px 20px rgba(0,212,255,0.3);text-transform:uppercase;letter-spacing:1px}
+.cursoDescricao{font-size:16px;color:#333;margin-bottom:20px;line-height:1.6}
+.thumbnailLink{display:block;text-decoration:none}
+.thumbnailWrapper{position:relative;cursor:pointer;border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3);border:3px solid rgba(0,212,255,0.5);transition:all 0.3s;margin-bottom:15px}
+.thumbnailWrapper:hover{border-color:#00D4FF;box-shadow:0 15px 50px rgba(0,212,255,0.6);transform:scale(1.03)}
+.thumbnailWrapper img{width:100%;height:auto;display:block;transition:all 0.3s}
+.thumbnailWrapper:hover img{filter:brightness(1.1)}
+.clickText{text-align:center;font-size:16px;color:#00B4D8;font-weight:bold;padding:10px;background:linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,180,216,0.1));border-radius:8px;transition:all 0.3s}
+.thumbnailLink:hover .clickText{color:#00D4FF;background:linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,180,216,0.2));transform:scale(1.05)}
+.footer{text-align:center;padding:40px 20px;margin-top:60px;border-top:3px solid rgba(0,212,255,0.4);background:linear-gradient(135deg, rgba(0,26,31,0.8), rgba(0,61,77,0.8));border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,0.5), 0 0 30px rgba(0,212,255,0.3)}
+.footerText{font-size:18px;color:#00D4FF;text-shadow:0 0 20px rgba(0,212,255,0.6);font-weight:600;letter-spacing:1px}
+@media (max-width:768px){
+.cursos{grid-template-columns:1fr;gap:30px}
+.title{font-size:36px}
+.subtitle{font-size:18px}
+.logo{width:250px}
+.cursoTitulo{font-size:22px}
+.cursoHeader{flex-direction:column;text-align:center}
+.topButtons{flex-direction:column;gap:10px;top:15px;right:15px}
+.calculadoraBtn, .discordBtn{padding:10px 20px;font-size:14px}
+}
+@media (max-width:500px){
+body{padding:100px 15px 20px}
+.title{font-size:28px}
+.subtitle{font-size:16px}
+.logo{width:200px}
+.curso{padding:20px}
+.cursoTitulo{font-size:20px}
+.cursoDescricao{font-size:14px}
+.topButtons{top:10px;right:10px}
+.calculadoraBtn, .discordBtn{padding:8px 15px;font-size:12px;gap:5px}
+.btnIcon{width:18px;height:18px}
+}
+</style>
+</head>
+<body>
+<div class="topButtons">
+<a href="calculadora.html" class="calculadoraBtn">
+<img src="https://em-content.zobj.net/source/apple/391/abacus_1f9ee.png" alt="🧮" class="btnIcon">
+Calculadora Penal
+</a>
+<a href="https://discord.gg/uS3A4PbghT" target="_blank" class="discordBtn">
+<svg class="btnIcon" viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+<path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="currentColor"/>
+</svg>
+Clique aqui
+</a>
+</div>
+<div class="container">
+<div class="header">
+<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/3ac201cec524412097d763d8c55a421cf73e4a056fb14c9095aa17cf4a64e8ec/Capturar-removebg-preview__1_.png" alt="Nova Era RP" class="logo">
+<h1 class="title">MENU DE CURSOS POLICIAL</h1>
+<p class="subtitle">Academia de Treinamento Nova Era Roleplay</p>
+</div>
+<div class="cursos">
+<div class="curso">
+<div class="cursoHeader">
+<img src="https://em-content.zobj.net/source/apple/391/scroll_1f4dc.png" alt="📜" class="cursoIcon">
+<h2 class="cursoTitulo">Prisão na Prática</h2>
+</div>
+<div class="badge">Curso Essencial</div>
+<p class="cursoDescricao">Aprenda as técnicas corretas de abordagem, revista e prisão. Conheça os procedimentos legais e as melhores práticas para garantir a segurança de todos.</p>
+<a href="https://youtu.be/oxTe0h1LK-w" target="_blank" class="thumbnailLink">
+<div class="thumbnailWrapper">
+<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Prisão na Prática">
+</div>
+<div class="clickText">👆 Clique aqui para ver o vídeo</div>
+</a>
+</div>
+<div class="curso">
+<div class="cursoHeader">
+<img src="https://em-content.zobj.net/source/apple/391/balance-scale_2696-fe0f.png" alt="⚖️" class="cursoIcon">
+<h2 class="cursoTitulo">Código Penal</h2>
+</div>
+<div class="badge">Curso Fundamental</div>
+<p class="cursoDescricao">Domine todos os artigos do código penal e suas aplicações práticas. Entenda a legislação e aprenda a aplicar as leis corretamente no dia a dia policial.</p>
+<a href="https://youtu.be/oxTe0h1LK-w" target="_blank" class="thumbnailLink">
+<div class="thumbnailWrapper">
+<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Código Penal">
+</div>
+<div class="clickText">👆 Clique aqui para ver o vídeo</div>
+</a>
+</div>
+<div class="curso">
+<div class="cursoHeader">
+<img src="https://em-content.zobj.net/source/apple/391/abacus_1f9ee.png" alt="🧮" class="cursoIcon">
+<h2 class="cursoTitulo">Cálculo Penal</h2>
+</div>
+<div class="badge">Curso Avançado</div>
+<p class="cursoDescricao">Calcule penas, multas e atenuantes com precisão profissional. Aprenda a aplicar reduções de pena e determinar valores de fiança corretamente.</p>
+<a href="https://youtu.be/rruPFrlcd4Y" target="_blank" class="thumbnailLink">
+<div class="thumbnailWrapper">
+<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Cálculo Penal">
+</div>
+<div class="clickText">👆 Clique aqui para ver o vídeo</div>
+</a>
+</div>
+</div>
+<div class="footer">
+<p class="footerText">© 2026 - Todos os direitos Reservados a Pedro Galhego</p>
+</div>
+</div>
+</body>
+</html>
