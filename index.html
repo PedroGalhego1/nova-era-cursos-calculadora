@@ -9,7 +9,7 @@
 body{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
   min-height:100vh;
-  background:linear-gradient(135deg, rgb(139, 0, 0) 0%, rgb(70, 0, 0) 50%, rgb(0, 0, 0) 100%);
+  background:#2a2a2a;
   padding:40px 20px;
   position:relative;
 }
@@ -17,11 +17,11 @@ body{
 .topButtons{position:fixed;top:20px;right:20px;display:flex;gap:15px;z-index:1000}
 .calculadoraBtn{
   padding:12px 25px;
-  background:#2a2a2a;
-  color:#ff4444;
+  background:#cc0000;
+  color:#fff;
   font-size:16px;
   font-weight:bold;
-  border:3px solid #ff4444;
+  border:3px solid #990000;
   border-radius:12px;
   cursor:pointer;
   text-decoration:none;
@@ -29,42 +29,40 @@ body{
   align-items:center;
   gap:10px;
   transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(255,68,68,0.4);
+  box-shadow:0 5px 25px rgba(204,0,0,0.5);
 }
 .calculadoraBtn:hover{
-  background:#ff4444;
-  color:#000;
+  background:#ff0000;
   transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(255,68,68,0.7);
+  box-shadow:0 8px 35px rgba(255,0,0,0.7);
 }
 .solicitarSetBtn{
   padding:12px 25px;
-  background:#2a2a2a;
-  color:#ff4444;
+  background:#cc0000;
+  color:#fff;
   font-size:16px;
   font-weight:bold;
-  border:3px solid #ff4444;
+  border:3px solid #990000;
   border-radius:12px;
   cursor:pointer;
   display:flex;
   align-items:center;
   gap:10px;
   transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(255,68,68,0.4);
+  box-shadow:0 5px 25px rgba(204,0,0,0.5);
 }
 .solicitarSetBtn:hover{
-  background:#ff4444;
-  color:#000;
+  background:#ff0000;
   transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(255,68,68,0.7);
+  box-shadow:0 8px 35px rgba(255,0,0,0.7);
 }
 .discordBtn{
   padding:12px 25px;
-  background:#2a2a2a;
-  color:#cc0000;
+  background:#cc0000;
+  color:#fff;
   font-size:16px;
   font-weight:bold;
-  border:3px solid #cc0000;
+  border:3px solid #990000;
   border-radius:12px;
   cursor:pointer;
   text-decoration:none;
@@ -72,25 +70,24 @@ body{
   align-items:center;
   gap:10px;
   transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(204,0,0,0.4);
+  box-shadow:0 5px 25px rgba(204,0,0,0.5);
 }
 .discordBtn:hover{
-  background:#cc0000;
-  color:#fff;
+  background:#ff0000;
   transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(204,0,0,0.7);
+  box-shadow:0 8px 35px rgba(255,0,0,0.7);
 }
 .btnIcon{width:24px;height:24px}
 .header{text-align:center;margin-bottom:60px;animation:fadeInDown 0.8s}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
-.logo{width:350px;max-width:90%;height:auto;margin-bottom:30px;filter:drop-shadow(0 0 40px rgba(255,68,68,0.8));animation:logoGlow 2s infinite alternate}
-@keyframes logoGlow{from{filter:drop-shadow(0 0 40px rgba(255,68,68,0.8))}to{filter:drop-shadow(0 0 60px rgba(255,68,68,1)) brightness(1.2)}}
-.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(255,68,68,1), 0 0 80px rgba(255,68,68,0.8);margin-bottom:15px;letter-spacing:2px}
-.subtitle{font-size:24px;color:#ff6666;font-weight:300;text-shadow:0 0 30px rgba(255,68,68,0.8)}
+.logo{width:350px;max-width:90%;height:auto;margin-bottom:30px;filter:drop-shadow(0 0 40px rgba(204,0,0,0.8));animation:logoGlow 2s infinite alternate}
+@keyframes logoGlow{from{filter:drop-shadow(0 0 40px rgba(204,0,0,0.8))}to{filter:drop-shadow(0 0 60px rgba(204,0,0,1)) brightness(1.2)}}
+.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(204,0,0,1), 0 0 80px rgba(204,0,0,0.8);margin-bottom:15px;letter-spacing:2px}
+.subtitle{font-size:24px;color:#fff;font-weight:300;text-shadow:0 0 30px rgba(204,0,0,0.8)}
 .cursos{display:grid;grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));gap:40px;margin-bottom:60px}
 .curso{
-  background:#1a1a1a;
-  border:4px solid #cc0000;
+  background:#cc0000;
+  border:4px solid #990000;
   border-radius:20px;
   padding:30px;
   box-shadow:0 20px 60px rgba(0,0,0,0.8), 0 0 50px rgba(204,0,0,0.3);
@@ -104,26 +101,26 @@ body{
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .curso:hover{
   transform:translateY(-10px) scale(1.02);
-  border-color:#ff4444;
-  box-shadow:0 30px 80px rgba(255,68,68,0.5);
+  border-color:#ff0000;
+  box-shadow:0 30px 80px rgba(255,0,0,0.5);
 }
-.cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(204,0,0,0.3)}
-.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(255,68,68,0.4));flex-shrink:0}
-.cursoTitulo{font-size:28px;font-weight:bold;color:#ff4444;flex:1}
+.cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(255,255,255,0.3)}
+.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(255,255,255,0.4));flex-shrink:0}
+.cursoTitulo{font-size:28px;font-weight:bold;color:#fff;flex:1}
 .badge{
   display:inline-block;
   padding:8px 20px;
-  background:linear-gradient(135deg, #cc0000, #8b0000);
-  color:#fff;
+  background:#fff;
+  color:#cc0000;
   font-size:14px;
   font-weight:bold;
   border-radius:20px;
   margin-bottom:15px;
-  box-shadow:0 5px 20px rgba(204,0,0,0.4);
+  box-shadow:0 5px 20px rgba(255,255,255,0.4);
   text-transform:uppercase;
   letter-spacing:1px;
 }
-.cursoDescricao{font-size:16px;color:#ddd;margin-bottom:20px;line-height:1.6}
+.cursoDescricao{font-size:16px;color:#fff;margin-bottom:20px;line-height:1.6}
 .thumbnailLink{display:block;text-decoration:none}
 .thumbnailWrapper{
   position:relative;
@@ -132,17 +129,17 @@ body{
   overflow:hidden;
   box-shadow:0 10px 40px rgba(0,0,0,0.6);
   transition:all 0.3s;
-  border:2px solid #444;
+  border:2px solid #fff;
 }
 .thumbnailWrapper:hover{
   transform:scale(1.05);
-  box-shadow:0 15px 50px rgba(204,0,0,0.6);
-  border-color:#cc0000;
+  box-shadow:0 15px 50px rgba(255,255,255,0.6);
+  border-color:#fff;
 }
 .thumbnailWrapper img{width:100%;height:auto;display:block;transition:all 0.3s}
 .thumbnailWrapper:hover img{filter:brightness(1.2)}
-.clickText{text-align:center;margin-top:15px;font-size:18px;color:#ff4444;font-weight:bold;transition:all 0.3s}
-.thumbnailLink:hover .clickText{color:#ff6666;transform:scale(1.05)}
+.clickText{text-align:center;margin-top:15px;font-size:18px;color:#fff;font-weight:bold;transition:all 0.3s}
+.thumbnailLink:hover .clickText{color:#fff;transform:scale(1.05);text-shadow:0 0 10px rgba(255,255,255,0.8)}
 .footer{text-align:center;padding:30px;margin-top:60px}
 .footerText{color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,0.8)}
 
@@ -170,8 +167,8 @@ body{
 
 /* Modal Content */
 .modalContent {
-  background: #1a1a1a;
-  border: 4px solid #cc0000;
+  background: #cc0000;
+  border: 4px solid #990000;
   border-radius: 20px;
   padding: 40px;
   max-width: 600px;
@@ -199,18 +196,18 @@ body{
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 3px solid rgba(204,0,0,0.4);
+  border-bottom: 3px solid rgba(255,255,255,0.4);
 }
 .modalHeader h2 {
   font-size: 28px;
-  color: #ff4444;
+  color: #fff;
   margin: 0;
 }
 .closeBtn {
   background: transparent;
   border: none;
   font-size: 32px;
-  color: #ff4444;
+  color: #fff;
   cursor: pointer;
   transition: all 0.3s;
   padding: 0;
@@ -222,7 +219,7 @@ body{
   border-radius: 50%;
 }
 .closeBtn:hover {
-  background: rgba(255,68,68,0.2);
+  background: rgba(255,255,255,0.2);
   transform: rotate(90deg);
 }
 
@@ -234,7 +231,7 @@ body{
   display: block;
   font-size: 16px;
   font-weight: bold;
-  color: #ff4444;
+  color: #fff;
   margin-bottom: 8px;
 }
 .formGroup input,
@@ -242,51 +239,51 @@ body{
   width: 100%;
   padding: 14px;
   font-size: 16px;
-  background: #2a2a2a;
-  color: #fff;
-  border: 3px solid rgba(204,0,0,0.4);
+  background: #fff;
+  color: #000;
+  border: 3px solid #990000;
   border-radius: 10px;
   transition: all 0.3s;
   font-family: inherit;
 }
 .formGroup input::placeholder {
-  color: #888;
+  color: #666;
 }
 .formGroup input:focus,
 .formGroup select:focus {
   outline: none;
-  border-color: #ff4444;
-  box-shadow: 0 0 20px rgba(255,68,68,0.4);
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 .formGroup small {
-  color: #aaa;
+  color: #fff;
 }
 
 /* Submit Button */
 .submitBtn {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #cc0000, #8b0000);
-  color: #fff;
+  background: #fff;
+  color: #cc0000;
   font-size: 18px;
   font-weight: bold;
-  border: none;
+  border: 3px solid #990000;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 5px 25px rgba(204,0,0,0.5);
+  box-shadow: 0 5px 25px rgba(255,255,255,0.5);
   margin-top: 10px;
 }
 .submitBtn:hover {
-  background: linear-gradient(135deg, #ff4444, #cc0000);
+  background: #f0f0f0;
   transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(255,68,68,0.8);
+  box-shadow: 0 8px 35px rgba(255,255,255,0.8);
 }
 .submitBtn:disabled {
-  background: #444;
+  background: #ccc;
   cursor: not-allowed;
   transform: none;
-  color: #888;
+  color: #666;
 }
 
 /* Status Message */
@@ -300,15 +297,15 @@ body{
 }
 .statusMessage.success {
   display: block;
-  background: #1a4d1a;
-  color: #88ff88;
-  border: 2px solid #2d7a2d;
+  background: #fff;
+  color: #008800;
+  border: 2px solid #00cc00;
 }
 .statusMessage.error {
   display: block;
-  background: #4d1a1a;
-  color: #ff8888;
-  border: 2px solid #7a2d2d;
+  background: #fff;
+  color: #cc0000;
+  border: 2px solid #990000;
 }
 </style>
 </head>
@@ -324,13 +321,12 @@ Solicitar Set
 </button>
 <a href="https://discord.gg/uS3A4PbghT" target="_blank" class="discordBtn">
 <span>💬</span>
-Clique aqui
+Discord
 </a>
 </div>
 
 <div class="container">
 <div class="header">
-<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/8b5d1a1f4af44a6fa1555b1f09dfd35bfbf04cac28de48d5868a26c64a46a2dc/nova_era.png" alt="Nova Era RP Logo" class="logo">
 <h1 class="title">Menu de Cursos</h1>
 <p class="subtitle">Formação Policial Profissional</p>
 </div>
@@ -424,7 +420,7 @@ Clique aqui
       <div class="formGroup">
         <label for="discord_id">Seu Discord ID:</label>
         <input type="text" id="discord_id" name="discord_id" required placeholder="Ex: 123456789012345678">
-        <small style="color:#aaa;font-size:12px;display:block;margin-top:5px;">Para pegar seu ID: Discord → Configurações → Avançado → Ativar Modo Desenvolvedor → Clique com botão direito no seu nome → Copiar ID</small>
+        <small style="display:block;margin-top:5px;">Para pegar seu ID: Discord → Configurações → Avançado → Ativar Modo Desenvolvedor → Clique com botão direito no seu nome → Copiar ID</small>
       </div>
       
       <button type="submit" class="submitBtn" id="submitBtn">
