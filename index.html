@@ -6,322 +6,53 @@
 <title>Menu de Cursos Policial - Nova Era RP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
-  min-height:100vh;
-  background:#2a2a2a;
-  padding:40px 20px;
-  position:relative;
-}
-.container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;min-height:100vh;background:#2a2a2a;padding:40px 20px}
+.container{max-width:1400px;margin:0 auto}
 .topButtons{position:fixed;top:20px;right:20px;display:flex;gap:15px;z-index:1000}
-.calculadoraBtn{
-  padding:12px 25px;
-  background:#cc0000;
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-  border:3px solid #990000;
-  border-radius:12px;
-  cursor:pointer;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(204,0,0,0.5);
-}
-.calculadoraBtn:hover{
-  background:#ff0000;
-  transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(255,0,0,0.7);
-}
-.solicitarSetBtn{
-  padding:12px 25px;
-  background:#cc0000;
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-  border:3px solid #990000;
-  border-radius:12px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(204,0,0,0.5);
-}
-.solicitarSetBtn:hover{
-  background:#ff0000;
-  transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(255,0,0,0.7);
-}
-.discordBtn{
-  padding:12px 25px;
-  background:#cc0000;
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
-  border:3px solid #990000;
-  border-radius:12px;
-  cursor:pointer;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  transition:all 0.3s;
-  box-shadow:0 5px 25px rgba(204,0,0,0.5);
-}
-.discordBtn:hover{
-  background:#ff0000;
-  transform:scale(1.08) translateY(-2px);
-  box-shadow:0 8px 35px rgba(255,0,0,0.7);
-}
-.btnIcon{width:24px;height:24px}
-.header{text-align:center;margin-bottom:60px;animation:fadeInDown 0.8s}
-@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
-.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(204,0,0,1), 0 0 80px rgba(204,0,0,0.8);margin-bottom:15px;letter-spacing:2px}
-.subtitle{font-size:24px;color:#fff;font-weight:300;text-shadow:0 0 30px rgba(204,0,0,0.8)}
+.calculadoraBtn,.solicitarSetBtn,.discordBtn{padding:12px 25px;background:#cc0000;color:#fff;font-size:16px;font-weight:bold;border:3px solid #990000;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(204,0,0,0.5)}
+.calculadoraBtn:hover,.solicitarSetBtn:hover,.discordBtn:hover{background:#ff0000;transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(255,0,0,0.7)}
+.header{text-align:center;margin-bottom:60px}
+.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(204,0,0,1);margin-bottom:15px}
+.subtitle{font-size:24px;color:#fff;font-weight:300}
 .cursos{display:grid;grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));gap:40px;margin-bottom:60px}
-.curso{
-  background:#cc0000;
-  border:4px solid #990000;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.8), 0 0 50px rgba(204,0,0,0.3);
-  transition:all 0.4s;
-  animation:fadeInUp 0.8s;
-  animation-fill-mode:both;
-}
-.curso:nth-child(1){animation-delay:0.1s}
-.curso:nth-child(2){animation-delay:0.2s}
-.curso:nth-child(3){animation-delay:0.3s}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.curso:hover{
-  transform:translateY(-10px) scale(1.02);
-  border-color:#ff0000;
-  box-shadow:0 30px 80px rgba(255,0,0,0.5);
-}
+.curso{background:#cc0000;border:4px solid #990000;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.8);transition:all 0.4s}
+.curso:hover{transform:translateY(-10px) scale(1.02);border-color:#ff0000;box-shadow:0 30px 80px rgba(255,0,0,0.5)}
 .cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(255,255,255,0.3)}
-.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(255,255,255,0.4));flex-shrink:0}
-.cursoTitulo{font-size:28px;font-weight:bold;color:#fff;flex:1}
-.badge{
-  display:inline-block;
-  padding:8px 20px;
-  background:#fff;
-  color:#cc0000;
-  font-size:14px;
-  font-weight:bold;
-  border-radius:20px;
-  margin-bottom:15px;
-  box-shadow:0 5px 20px rgba(255,255,255,0.4);
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
+.cursoIcon{width:60px;height:60px}
+.cursoTitulo{font-size:28px;font-weight:bold;color:#fff}
+.badge{padding:8px 20px;background:#fff;color:#cc0000;font-size:14px;font-weight:bold;border-radius:20px;margin-bottom:15px;text-transform:uppercase}
 .cursoDescricao{font-size:16px;color:#fff;margin-bottom:20px;line-height:1.6}
-.thumbnailLink{display:block;text-decoration:none}
-.thumbnailWrapper{
-  position:relative;
-  cursor:pointer;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 10px 40px rgba(0,0,0,0.6);
-  transition:all 0.3s;
-  border:2px solid #fff;
-}
-.thumbnailWrapper:hover{
-  transform:scale(1.05);
-  box-shadow:0 15px 50px rgba(255,255,255,0.6);
-}
-.thumbnailWrapper img{width:100%;height:auto;display:block;transition:all 0.3s}
-.thumbnailWrapper:hover img{filter:brightness(1.2)}
-.clickText{text-align:center;margin-top:15px;font-size:18px;color:#fff;font-weight:bold;transition:all 0.3s}
-.thumbnailLink:hover .clickText{color:#fff;transform:scale(1.05);text-shadow:0 0 10px rgba(255,255,255,0.8)}
+.thumbnailWrapper{border-radius:15px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.6);border:2px solid #fff;transition:all 0.3s}
+.thumbnailWrapper:hover{transform:scale(1.05);box-shadow:0 15px 50px rgba(255,255,255,0.6)}
+.thumbnailWrapper img{width:100%;height:auto;display:block}
+.clickText{text-align:center;margin-top:15px;font-size:18px;color:#fff;font-weight:bold}
 .footer{text-align:center;padding:30px;margin-top:60px}
-.footerText{color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,0.8)}
-
-/* Modal Overlay */
-.modalOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s;
-}
-.modalOverlay.active {
-  display: flex;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Modal Content */
-.modalContent {
-  background: #cc0000;
-  border: 4px solid #990000;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 30px 80px rgba(204,0,0,0.9);
-  animation: slideIn 0.4s;
-}
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Modal Header */
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 3px solid rgba(255,255,255,0.4);
-}
-.modalHeader h2 {
-  font-size: 28px;
-  color: #fff;
-  margin: 0;
-}
-.closeBtn {
-  background: transparent;
-  border: none;
-  font-size: 32px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.closeBtn:hover {
-  background: rgba(255,255,255,0.2);
-  transform: rotate(90deg);
-}
-
-/* Form Groups */
-.formGroup {
-  margin-bottom: 25px;
-}
-.formGroup label {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.formGroup input,
-.formGroup select {
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  background: #fff;
-  color: #000;
-  border: 3px solid #990000;
-  border-radius: 10px;
-  transition: all 0.3s;
-  font-family: inherit;
-}
-.formGroup input::placeholder {
-  color: #666;
-}
-.formGroup input:focus,
-.formGroup select:focus {
-  outline: none;
-  border-color: #fff;
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
-}
-.formGroup small {
-  color: #fff;
-}
-
-/* Submit Button */
-.submitBtn {
-  width: 100%;
-  padding: 16px;
-  background: #fff;
-  color: #cc0000;
-  font-size: 18px;
-  font-weight: bold;
-  border: 3px solid #990000;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 5px 25px rgba(255,255,255,0.5);
-  margin-top: 10px;
-}
-.submitBtn:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(255,255,255,0.8);
-}
-.submitBtn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  color: #666;
-}
-
-/* Status Message */
-.statusMessage {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-align: center;
-  display: none;
-  font-size: 14px;
-  line-height: 1.6;
-}
-.statusMessage.success {
-  display: block;
-  background: #fff;
-  color: #008800;
-  border: 2px solid #00cc00;
-}
-.statusMessage.error {
-  display: block;
-  background: #fff;
-  color: #cc0000;
-  border: 2px solid #990000;
-}
+.footerText{color:#fff;font-size:14px}
+.modalOverlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;justify-content:center;align-items:center}
+.modalOverlay.active{display:flex}
+.modalContent{background:#cc0000;border:4px solid #990000;border-radius:20px;padding:40px;max-width:600px;width:90%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(204,0,0,0.9)}
+.modalHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding-bottom:20px;border-bottom:3px solid rgba(255,255,255,0.4)}
+.modalHeader h2{font-size:28px;color:#fff;margin:0}
+.closeBtn{background:transparent;border:none;font-size:32px;color:#fff;cursor:pointer;padding:0;width:40px;height:40px;border-radius:50%;transition:all 0.3s}
+.closeBtn:hover{background:rgba(255,255,255,0.2);transform:rotate(90deg)}
+.formGroup{margin-bottom:25px}
+.formGroup label{display:block;font-size:16px;font-weight:bold;color:#fff;margin-bottom:8px}
+.formGroup input,.formGroup select{width:100%;padding:14px;font-size:16px;background:#fff;color:#000;border:3px solid #990000;border-radius:10px;font-family:inherit}
+.formGroup input:focus,.formGroup select:focus{outline:none;border-color:#fff;box-shadow:0 0 20px rgba(255,255,255,0.4)}
+.formGroup small{color:#fff;font-size:12px}
+.submitBtn{width:100%;padding:16px;background:#fff;color:#cc0000;font-size:18px;font-weight:bold;border:3px solid #990000;border-radius:12px;cursor:pointer;transition:all 0.3s;margin-top:10px}
+.submitBtn:hover{background:#f0f0f0;transform:translateY(-2px)}
+.submitBtn:disabled{background:#ccc;cursor:not-allowed;color:#666}
+.statusMessage{margin-top:20px;padding:15px;border-radius:10px;font-weight:bold;text-align:center;display:none;font-size:14px}
+.statusMessage.success{display:block;background:#fff;color:#008800;border:2px solid #00cc00}
+.statusMessage.error{display:block;background:#fff;color:#cc0000;border:2px solid #990000}
 </style>
 </head>
 <body>
 <div class="topButtons">
-<a href="https://calculadorapenalbope.netlify.app/calculadora" class="calculadoraBtn">
-<img src="https://em-content.zobj.net/source/apple/391/abacus_1f9ee.png" alt="🧮" class="btnIcon">
-Calculadora Penal
-</a>
-<button class="solicitarSetBtn" onclick="openSetModal()">
-<span>📋</span>
-Solicitar Set
-</button>
-<a href="https://discord.gg/uS3A4PbghT" target="_blank" class="discordBtn">
-<span>💬</span>
-Discord
-</a>
+<a href="https://calculadorapenalbope.netlify.app/calculadora" class="calculadoraBtn">🧮 Calculadora Penal</a>
+<button class="solicitarSetBtn" onclick="openSetModal()">📋 Solicitar Set</button>
+<a href="https://discord.gg/uS3A4PbghT" target="_blank" class="discordBtn">💬 Discord</a>
 </div>
 
 <div class="container">
@@ -338,10 +69,8 @@ Discord
 </div>
 <div class="badge">Curso Essencial</div>
 <p class="cursoDescricao">Aprenda as técnicas corretas de abordagem, revista e prisão. Conheça os procedimentos legais e as melhores práticas para garantir a segurança de todos.</p>
-<a href="https://youtu.be/oxTe0h1LK-w" target="_blank" class="thumbnailLink">
-<div class="thumbnailWrapper">
-<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Prisão na Prática">
-</div>
+<a href="https://youtu.be/oxTe0h1LK-w" target="_blank">
+<div class="thumbnailWrapper"><img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Prisão na Prática"></div>
 <div class="clickText">👆 Clique aqui para ver o vídeo</div>
 </a>
 </div>
@@ -353,10 +82,8 @@ Discord
 </div>
 <div class="badge">Curso Fundamental</div>
 <p class="cursoDescricao">Domine todos os artigos do código penal e suas aplicações práticas. Entenda a legislação e aprenda a aplicar as leis corretamente no dia a dia policial.</p>
-<a href="https://youtu.be/oxTe0h1LK-w" target="_blank" class="thumbnailLink">
-<div class="thumbnailWrapper">
-<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Código Penal">
-</div>
+<a href="https://youtu.be/oxTe0h1LK-w" target="_blank">
+<div class="thumbnailWrapper"><img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Código Penal"></div>
 <div class="clickText">👆 Clique aqui para ver o vídeo</div>
 </a>
 </div>
@@ -368,10 +95,8 @@ Discord
 </div>
 <div class="badge">Curso Avançado</div>
 <p class="cursoDescricao">Calcule penas, multas e atenuantes com precisão profissional. Aprenda a aplicar reduções de pena e determinar valores de fiança corretamente.</p>
-<a href="https://youtu.be/rruPFrlcd4Y" target="_blank" class="thumbnailLink">
-<div class="thumbnailWrapper">
-<img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Cálculo Penal">
-</div>
+<a href="https://youtu.be/rruPFrlcd4Y" target="_blank">
+<div class="thumbnailWrapper"><img src="https://codewords-uploads.s3.amazonaws.com/runtime_v2/fe318204d5034c0fba88be775c8a7253bbc1bd90832049fa8fde60115bb15272/maxresdefault.jpg" alt="Cálculo Penal"></div>
 <div class="clickText">👆 Clique aqui para ver o vídeo</div>
 </a>
 </div>
@@ -382,7 +107,6 @@ Discord
 </div>
 </div>
 
-<!-- Modal de Solicitação de Set -->
 <div id="setModal" class="modalOverlay">
   <div class="modalContent">
     <div class="modalHeader">
@@ -393,17 +117,17 @@ Discord
     <form id="setForm" onsubmit="submitSetagem(event)">
       <div class="formGroup">
         <label for="qra">QRA / Nome:</label>
-        <input type="text" id="qra" name="qra" required placeholder="Digite seu nome/QRA">
+        <input type="text" id="qra" required placeholder="Digite seu nome/QRA">
       </div>
       
       <div class="formGroup">
         <label for="game_id">ID do Jogo (Passaporte):</label>
-        <input type="text" id="game_id" name="game_id" required placeholder="Digite seu ID do jogo">
+        <input type="text" id="game_id" required placeholder="Digite seu ID do jogo">
       </div>
       
       <div class="formGroup">
         <label for="cargo">Cargo Desejado:</label>
-        <select id="cargo" name="cargo" required>
+        <select id="cargo" required>
           <option value="">Selecione o cargo</option>
           <option value="👮 • CABO ⟩⟩">👮 • CABO ⟩⟩</option>
           <option value="👮 • SOLDADO ⟩⟩">👮 • SOLDADO ⟩⟩</option>
@@ -413,58 +137,41 @@ Discord
       
       <div class="formGroup">
         <label for="recrutador">Recrutador:</label>
-        <input type="text" id="recrutador" name="recrutador" required placeholder="Quem te recrutou?">
+        <input type="text" id="recrutador" required placeholder="Quem te recrutou?">
       </div>
       
       <div class="formGroup">
         <label for="discord_id">Seu Discord ID:</label>
-        <input type="text" id="discord_id" name="discord_id" required placeholder="Ex: 123456789012345678">
-        <small style="display:block;margin-top:5px;">Para pegar seu ID: Discord → Configurações → Avançado → Ativar Modo Desenvolvedor → Clique com botão direito no seu nome → Copiar ID</small>
+        <input type="text" id="discord_id" required placeholder="Ex: 123456789012345678">
+        <small style="display:block;margin-top:5px;">Discord → Configurações → Avançado → Modo Desenvolvedor → Botão direito no seu nome → Copiar ID</small>
       </div>
       
-      <button type="submit" class="submitBtn" id="submitBtn">
-        ✅ Enviar Solicitação
-      </button>
-      
+      <button type="submit" class="submitBtn" id="submitBtn">✅ Enviar Solicitação</button>
       <div id="statusMessage" class="statusMessage"></div>
     </form>
   </div>
 </div>
 
 <script>
-// Modal functions
-function openSetModal() {
-  document.getElementById('setModal').classList.add('active');
-}
-
+function openSetModal() {document.getElementById('setModal').classList.add('active');}
 function closeSetModal() {
   document.getElementById('setModal').classList.remove('active');
   document.getElementById('setForm').reset();
   document.getElementById('statusMessage').className = 'statusMessage';
   document.getElementById('statusMessage').textContent = '';
 }
+document.getElementById('setModal').addEventListener('click', e => {if (e.target === e.currentTarget) closeSetModal();});
 
-// Close modal when clicking outside
-document.getElementById('setModal').addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeSetModal();
-  }
-});
-
-// Submit form using RUNTIME endpoint directly (avoiding Workers DNS issues)
 async function submitSetagem(event) {
   event.preventDefault();
-  
   const submitBtn = document.getElementById('submitBtn');
   const statusMsg = document.getElementById('statusMessage');
   
-  // Disable button and show loading
   submitBtn.disabled = true;
   submitBtn.textContent = '⏳ Enviando...';
   statusMsg.className = 'statusMessage';
   statusMsg.textContent = '';
   
-  // Get form data
   const formData = {
     qra: document.getElementById('qra').value,
     game_id: document.getElementById('game_id').value,
@@ -474,41 +181,31 @@ async function submitSetagem(event) {
     username: document.getElementById('qra').value
   };
   
-  console.log('📤 Enviando dados:', formData);
+  console.log('📤 Sending to Netlify Function:', formData);
   
   try {
-    // FIXED: Using runtime.codewords.ai directly instead of workers.dev
-    const url = 'https://runtime.codewords.ai/v1/services/discord_bope_setagem_bot_cf91cc54/test';
-    console.log('🌐 URL:', url);
-    
-    const response = await fetch(url, {
+    // IMPORTANTE: Chama a Netlify Function (não o CodeWords direto!)
+    const response = await fetch('/.netlify/functions/submit-setagem', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)
     });
     
-    console.log('📥 Status:', response.status);
+    console.log('📥 Netlify Function response:', response.status);
     
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('❌ Error response:', errorText);
-      throw new Error(`HTTP ${response.status}: ${errorText.substring(0, 200)}`);
+      const error = await response.json().catch(() => ({error: 'Erro desconhecido'}));
+      throw new Error(error.error || `HTTP ${response.status}`);
     }
     
     const result = await response.json();
-    console.log('✅ Success:', result);
+    console.log('✅ Result:', result);
     
     if (result.status === 'success') {
       statusMsg.className = 'statusMessage success';
-      statusMsg.textContent = '✅ Solicitação enviada com sucesso! Aguarde aprovação dos comandantes no Discord.';
+      statusMsg.textContent = '✅ Solicitação enviada! Aguarde aprovação no Discord.';
       document.getElementById('setForm').reset();
-      
-      // Close modal after 3 seconds
-      setTimeout(() => {
-        closeSetModal();
-      }, 3000);
+      setTimeout(() => closeSetModal(), 3000);
     } else {
       throw new Error(result.message || 'Erro desconhecido');
     }
