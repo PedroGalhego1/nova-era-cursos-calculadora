@@ -6,44 +6,145 @@
 <title>Menu de Cursos Policial - Nova Era RP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;min-height:100vh;background:url('https://codewords-uploads.s3.amazonaws.com/runtime_v2/8e71f62838fd49789e04b76b40273ebecdf761e625344371a1b3803b6d22c163/3031764-fundo-azul-amplo-com-gradiente-linear-borrado-gratis-vetor.jpg') center/cover fixed;padding:40px 20px;position:relative}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, rgba(0,180,216,0.3), rgba(0,212,255,0.2));z-index:0;pointer-events:none}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  min-height:100vh;
+  background:linear-gradient(135deg, rgb(139, 0, 0) 0%, rgb(70, 0, 0) 50%, rgb(0, 0, 0) 100%);
+  padding:40px 20px;
+  position:relative;
+}
 .container{max-width:1400px;margin:0 auto;position:relative;z-index:1}
 .topButtons{position:fixed;top:20px;right:20px;display:flex;gap:15px;z-index:1000}
-.calculadoraBtn{padding:12px 25px;background:#fff;color:#00B4D8;font-size:16px;font-weight:bold;border:3px solid #00B4D8;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(0,180,216,0.6)}
-.calculadoraBtn:hover{background:#00B4D8;color:#fff;transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(0,180,216,0.9)}
-.solicitarSetBtn{padding:12px 25px;background:#fff;color:#00B4D8;font-size:16px;font-weight:bold;border:3px solid #00B4D8;border-radius:12px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(0,180,216,0.6)}
-.solicitarSetBtn:hover{background:#00B4D8;color:#fff;transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(0,180,216,0.9)}
-.discordBtn{padding:12px 25px;background:linear-gradient(135deg, #5865F2, #4752C4);color:#fff;font-size:16px;font-weight:bold;border:3px solid #5865F2;border-radius:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 5px 25px rgba(88,101,242,0.6)}
-.discordBtn:hover{background:linear-gradient(135deg, #4752C4, #3c45a5);transform:scale(1.08) translateY(-2px);box-shadow:0 8px 35px rgba(88,101,242,0.9)}
+.calculadoraBtn{
+  padding:12px 25px;
+  background:#2a2a2a;
+  color:#ff4444;
+  font-size:16px;
+  font-weight:bold;
+  border:3px solid #ff4444;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:all 0.3s;
+  box-shadow:0 5px 25px rgba(255,68,68,0.4);
+}
+.calculadoraBtn:hover{
+  background:#ff4444;
+  color:#000;
+  transform:scale(1.08) translateY(-2px);
+  box-shadow:0 8px 35px rgba(255,68,68,0.7);
+}
+.solicitarSetBtn{
+  padding:12px 25px;
+  background:#2a2a2a;
+  color:#ff4444;
+  font-size:16px;
+  font-weight:bold;
+  border:3px solid #ff4444;
+  border-radius:12px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:all 0.3s;
+  box-shadow:0 5px 25px rgba(255,68,68,0.4);
+}
+.solicitarSetBtn:hover{
+  background:#ff4444;
+  color:#000;
+  transform:scale(1.08) translateY(-2px);
+  box-shadow:0 8px 35px rgba(255,68,68,0.7);
+}
+.discordBtn{
+  padding:12px 25px;
+  background:#2a2a2a;
+  color:#cc0000;
+  font-size:16px;
+  font-weight:bold;
+  border:3px solid #cc0000;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:all 0.3s;
+  box-shadow:0 5px 25px rgba(204,0,0,0.4);
+}
+.discordBtn:hover{
+  background:#cc0000;
+  color:#fff;
+  transform:scale(1.08) translateY(-2px);
+  box-shadow:0 8px 35px rgba(204,0,0,0.7);
+}
 .btnIcon{width:24px;height:24px}
 .header{text-align:center;margin-bottom:60px;animation:fadeInDown 0.8s}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
-.logo{width:350px;max-width:90%;height:auto;margin-bottom:30px;filter:drop-shadow(0 0 40px rgba(0,212,255,1));animation:logoGlow 2s infinite alternate}
-@keyframes logoGlow{from{filter:drop-shadow(0 0 40px rgba(0,212,255,1))}to{filter:drop-shadow(0 0 60px rgba(0,212,255,1)) brightness(1.2)}}
-.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(0,212,255,1), 0 0 80px rgba(0,212,255,0.8);margin-bottom:15px;letter-spacing:2px}
-.subtitle{font-size:24px;color:#00D4FF;font-weight:300;text-shadow:0 0 30px rgba(0,212,255,0.8)}
+.logo{width:350px;max-width:90%;height:auto;margin-bottom:30px;filter:drop-shadow(0 0 40px rgba(255,68,68,0.8));animation:logoGlow 2s infinite alternate}
+@keyframes logoGlow{from{filter:drop-shadow(0 0 40px rgba(255,68,68,0.8))}to{filter:drop-shadow(0 0 60px rgba(255,68,68,1)) brightness(1.2)}}
+.title{font-size:56px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(255,68,68,1), 0 0 80px rgba(255,68,68,0.8);margin-bottom:15px;letter-spacing:2px}
+.subtitle{font-size:24px;color:#ff6666;font-weight:300;text-shadow:0 0 30px rgba(255,68,68,0.8)}
 .cursos{display:grid;grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));gap:40px;margin-bottom:60px}
-.curso{background:#fff;border:4px solid #00D4FF;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 0 50px rgba(0,212,255,0.5);transition:all 0.4s;animation:fadeInUp 0.8s;animation-fill-mode:both}
+.curso{
+  background:#1a1a1a;
+  border:4px solid #cc0000;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.8), 0 0 50px rgba(204,0,0,0.3);
+  transition:all 0.4s;
+  animation:fadeInUp 0.8s;
+  animation-fill-mode:both;
+}
 .curso:nth-child(1){animation-delay:0.1s}
 .curso:nth-child(2){animation-delay:0.2s}
 .curso:nth-child(3){animation-delay:0.3s}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.curso:hover{transform:translateY(-10px) scale(1.02);border-color:#00D4FF;box-shadow:0 30px 80px rgba(0,212,255,0.9)}
-.cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(0,180,216,0.2)}
-.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(0,180,216,0.4));flex-shrink:0}
-.cursoTitulo{font-size:28px;font-weight:bold;color:#00B4D8;flex:1}
-.badge{display:inline-block;padding:8px 20px;background:linear-gradient(135deg, #00D4FF, #00B4D8);color:#000;font-size:14px;font-weight:bold;border-radius:20px;margin-bottom:15px;box-shadow:0 5px 20px rgba(0,212,255,0.3);text-transform:uppercase;letter-spacing:1px}
-.cursoDescricao{font-size:16px;color:#333;margin-bottom:20px;line-height:1.6}
+.curso:hover{
+  transform:translateY(-10px) scale(1.02);
+  border-color:#ff4444;
+  box-shadow:0 30px 80px rgba(255,68,68,0.5);
+}
+.cursoHeader{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid rgba(204,0,0,0.3)}
+.cursoIcon{width:60px;height:60px;filter:drop-shadow(0 5px 15px rgba(255,68,68,0.4));flex-shrink:0}
+.cursoTitulo{font-size:28px;font-weight:bold;color:#ff4444;flex:1}
+.badge{
+  display:inline-block;
+  padding:8px 20px;
+  background:linear-gradient(135deg, #cc0000, #8b0000);
+  color:#fff;
+  font-size:14px;
+  font-weight:bold;
+  border-radius:20px;
+  margin-bottom:15px;
+  box-shadow:0 5px 20px rgba(204,0,0,0.4);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.cursoDescricao{font-size:16px;color:#ddd;margin-bottom:20px;line-height:1.6}
 .thumbnailLink{display:block;text-decoration:none}
-.thumbnailWrapper{position:relative;cursor:pointer;border-radius:15px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.4);transition:all 0.3s}
-.thumbnailWrapper:hover{transform:scale(1.05);box-shadow:0 15px 50px rgba(0,212,255,0.6)}
+.thumbnailWrapper{
+  position:relative;
+  cursor:pointer;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  transition:all 0.3s;
+  border:2px solid #444;
+}
+.thumbnailWrapper:hover{
+  transform:scale(1.05);
+  box-shadow:0 15px 50px rgba(204,0,0,0.6);
+  border-color:#cc0000;
+}
 .thumbnailWrapper img{width:100%;height:auto;display:block;transition:all 0.3s}
-.thumbnailWrapper:hover img{filter:brightness(1.1)}
-.clickText{text-align:center;margin-top:15px;font-size:18px;color:#00B4D8;font-weight:bold;transition:all 0.3s}
-.thumbnailLink:hover .clickText{color:#00D4FF;transform:scale(1.05)}
+.thumbnailWrapper:hover img{filter:brightness(1.2)}
+.clickText{text-align:center;margin-top:15px;font-size:18px;color:#ff4444;font-weight:bold;transition:all 0.3s}
+.thumbnailLink:hover .clickText{color:#ff6666;transform:scale(1.05)}
 .footer{text-align:center;padding:30px;margin-top:60px}
-.footerText{color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,0.5)}
+.footerText{color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,0.8)}
 
 /* Modal Overlay */
 .modalOverlay {
@@ -53,7 +154,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   z-index: 9999;
   justify-content: center;
   align-items: center;
@@ -69,15 +170,15 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
 /* Modal Content */
 .modalContent {
-  background: #fff;
-  border: 4px solid #00D4FF;
+  background: #1a1a1a;
+  border: 4px solid #cc0000;
   border-radius: 20px;
   padding: 40px;
   max-width: 600px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 30px 80px rgba(0,212,255,0.9);
+  box-shadow: 0 30px 80px rgba(204,0,0,0.9);
   animation: slideIn 0.4s;
 }
 @keyframes slideIn {
@@ -98,18 +199,18 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 3px solid rgba(0,180,216,0.3);
+  border-bottom: 3px solid rgba(204,0,0,0.4);
 }
 .modalHeader h2 {
   font-size: 28px;
-  color: #00B4D8;
+  color: #ff4444;
   margin: 0;
 }
 .closeBtn {
   background: transparent;
   border: none;
   font-size: 32px;
-  color: #00B4D8;
+  color: #ff4444;
   cursor: pointer;
   transition: all 0.3s;
   padding: 0;
@@ -121,7 +222,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   border-radius: 50%;
 }
 .closeBtn:hover {
-  background: rgba(0,180,216,0.1);
+  background: rgba(255,68,68,0.2);
   transform: rotate(90deg);
 }
 
@@ -133,7 +234,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   display: block;
   font-size: 16px;
   font-weight: bold;
-  color: #00B4D8;
+  color: #ff4444;
   margin-bottom: 8px;
 }
 .formGroup input,
@@ -141,23 +242,31 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   width: 100%;
   padding: 14px;
   font-size: 16px;
-  border: 3px solid rgba(0,180,216,0.3);
+  background: #2a2a2a;
+  color: #fff;
+  border: 3px solid rgba(204,0,0,0.4);
   border-radius: 10px;
   transition: all 0.3s;
   font-family: inherit;
 }
+.formGroup input::placeholder {
+  color: #888;
+}
 .formGroup input:focus,
 .formGroup select:focus {
   outline: none;
-  border-color: #00B4D8;
-  box-shadow: 0 0 20px rgba(0,212,255,0.4);
+  border-color: #ff4444;
+  box-shadow: 0 0 20px rgba(255,68,68,0.4);
+}
+.formGroup small {
+  color: #aaa;
 }
 
 /* Submit Button */
 .submitBtn {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #00D4FF, #00B4D8);
+  background: linear-gradient(135deg, #cc0000, #8b0000);
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -165,18 +274,19 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 5px 25px rgba(0,212,255,0.4);
+  box-shadow: 0 5px 25px rgba(204,0,0,0.5);
   margin-top: 10px;
 }
 .submitBtn:hover {
-  background: linear-gradient(135deg, #00B4D8, #0096b8);
+  background: linear-gradient(135deg, #ff4444, #cc0000);
   transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(0,212,255,0.7);
+  box-shadow: 0 8px 35px rgba(255,68,68,0.8);
 }
 .submitBtn:disabled {
-  background: #ccc;
+  background: #444;
   cursor: not-allowed;
   transform: none;
+  color: #888;
 }
 
 /* Status Message */
@@ -190,15 +300,15 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 }
 .statusMessage.success {
   display: block;
-  background: #d4edda;
-  color: #155724;
-  border: 2px solid #c3e6cb;
+  background: #1a4d1a;
+  color: #88ff88;
+  border: 2px solid #2d7a2d;
 }
 .statusMessage.error {
   display: block;
-  background: #f8d7da;
-  color: #721c24;
-  border: 2px solid #f5c6cb;
+  background: #4d1a1a;
+  color: #ff8888;
+  border: 2px solid #7a2d2d;
 }
 </style>
 </head>
@@ -314,7 +424,7 @@ Clique aqui
       <div class="formGroup">
         <label for="discord_id">Seu Discord ID:</label>
         <input type="text" id="discord_id" name="discord_id" required placeholder="Ex: 123456789012345678">
-        <small style="color:#666;font-size:12px;display:block;margin-top:5px;">Para pegar seu ID: Discord → Configurações → Avançado → Ativar Modo Desenvolvedor → Clique com botão direito no seu nome → Copiar ID</small>
+        <small style="color:#aaa;font-size:12px;display:block;margin-top:5px;">Para pegar seu ID: Discord → Configurações → Avançado → Ativar Modo Desenvolvedor → Clique com botão direito no seu nome → Copiar ID</small>
       </div>
       
       <button type="submit" class="submitBtn" id="submitBtn">
@@ -379,9 +489,14 @@ async function submitSetagem(event) {
       body: JSON.stringify(formData)
     });
     
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Erro HTTP ${response.status}: ${errorText}`);
+    }
+    
     const result = await response.json();
     
-    if (response.ok && result.status === 'success') {
+    if (result.status === 'success') {
       statusMsg.className = 'statusMessage success';
       statusMsg.textContent = '✅ Solicitação enviada com sucesso! Aguarde aprovação dos comandantes no Discord.';
       document.getElementById('setForm').reset();
@@ -391,12 +506,12 @@ async function submitSetagem(event) {
         closeSetModal();
       }, 3000);
     } else {
-      throw new Error(result.message || 'Erro ao enviar solicitação');
+      throw new Error(result.message || 'Erro desconhecido ao enviar solicitação');
     }
   } catch (error) {
     console.error('Error:', error);
     statusMsg.className = 'statusMessage error';
-    statusMsg.textContent = '❌ Erro: ' + error.message;
+    statusMsg.textContent = '❌ ' + error.message;
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = '✅ Enviar Solicitação';
